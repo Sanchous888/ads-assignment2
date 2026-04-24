@@ -1,26 +1,18 @@
-public class QueueList implements IntQueue{
-    @Override
-    public boolean empty() {
-        return false;
-    }
+public class QueueList implements IntQueue {
+    private IntList list = new IntList();
 
-    @Override
-    public void add(int item) {
+    public boolean empty() { return list.isEmpty(); }
 
-    }
+    public void add(int item) { list.addLast(item); }
 
-    @Override
-    public int peek() {
-        return 0;
-    }
+    public int peek() { return list.getFirst(); }
 
-    @Override
-    public int remove() {
-        return 0;
-    }
+    public int remove() { return list.removeFirst(); }
 
-    ///  main method to test the class.
-    static void main() {
-
+    public static void main(String[] args) {
+        QueueList q = new QueueList();
+        q.add(1);
+        q.add(2);
+        System.out.println(q.remove());
     }
 }
